@@ -64,7 +64,7 @@ dependencies:
   
   # UI Components
   carousel_slider: ^5.0.0
-  shimmer_animation: ^2.2.1
+  shimmer_animation: ^2.1.0
   photo_view: ^0.15.0
   dotted_border: ^2.1.0
   card_swiper: ^3.0.1
