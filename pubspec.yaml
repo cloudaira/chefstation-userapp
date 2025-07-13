@@ -132,7 +132,7 @@ dev_dependencies:
     sdk: flutter
 
   # Code Quality
-  flutter_lints: ^5.0.0
+  flutter_lints: ^4.0.0
   
   # Database Development
   drift_dev: ^2.21.2
