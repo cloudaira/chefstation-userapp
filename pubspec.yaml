@@ -82,7 +82,7 @@ dependencies:
   get_thumbnail_video: ^0.7.0
   
   # Video
-  video_player: ^2.9.3
+  video_player: ^2.8.3
   chewie: ^1.11.0
   
   # Phone & Country
