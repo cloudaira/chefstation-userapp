@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chefstation_multivendor/util/logger.dart';
 import 'package:chefstation_multivendor/util/error_handler.dart';
 import 'package:chefstation_multivendor/util/state_manager.dart';
+import 'unit_test_helpers.mocks.dart';
 
 // Generate mocks for common dependencies
 @GenerateMocks([

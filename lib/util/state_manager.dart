@@ -70,9 +70,10 @@ abstract class BaseStateController<T> extends GetxController {
     String? cacheKey,
     Duration? cacheExpiry,
     bool enableCache = true,
-  }) : _cacheKey = cacheKey ?? runtimeType.toString(),
-       _cacheExpiry = cacheExpiry ?? const Duration(hours: 1),
-       _enableCache = enableCache;
+  }) : _cacheExpiry = cacheExpiry ?? const Duration(hours: 1),
+       _enableCache = enableCache {
+    _cacheKey = cacheKey ?? runtimeType.toString();
+  }
 
   StateData<T> get state => _state.value;
   Rx<StateData<T>> get stateRx => _state;
@@ -322,7 +323,7 @@ abstract class BaseListStateController<T> extends BaseStateController<List<T>> {
 }
 
 /// Pagination State Controller
-class PaginationStateController<T> extends BaseListStateController<T> {
+abstract class PaginationStateController<T> extends BaseListStateController<T> {
   final int _pageSize;
   int _currentPage = 0;
   bool _hasMoreData = true;

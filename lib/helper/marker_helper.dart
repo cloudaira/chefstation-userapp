@@ -16,7 +16,7 @@ class MarkerHelper{
   }) async {
     try {
       if(GetPlatform.isWeb) {
-        return BitmapDescriptor.asset(imagePath);
+        return await BitmapDescriptor.fromAssetImage(const ImageConfiguration(), imagePath);
       }
       final ByteData byteDataFromImage = await rootBundle.load(imagePath).timeout(const Duration(seconds: 8));
       final ui.Codec codec = await ui
