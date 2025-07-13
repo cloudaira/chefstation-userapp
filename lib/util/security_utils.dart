@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:crypto/crypto.dart';
-import 'package:encrypt/encrypt.dart';
+import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chefstation_multivendor/util/logger.dart';
@@ -12,15 +12,15 @@ class SecurityUtils {
   static const String _ivKey = 'your-16-char-iv!!'; // Change in production
   static const String _secureStoragePrefix = 'secure_';
   
-  static late final Encrypter _encrypter;
-  static late final IV _iv;
+  static late final encrypt.Encrypter _encrypter;
+  static late final encrypt.IV _iv;
   
   /// Initialize encryption
   static void initialize() {
     try {
-      final key = Key.fromUtf8(_encryptionKey);
-      _iv = IV.fromUtf8(_ivKey);
-      _encrypter = Encrypter(AES(key));
+      final key = encrypt.Key.fromUtf8(_encryptionKey);
+      _iv = encrypt.IV.fromUtf8(_ivKey);
+      _encrypter = encrypt.Encrypter(encrypt.AES(key));
       AppLogger.info('Security utils initialized successfully');
     } catch (error) {
       AppLogger.error('Failed to initialize security utils', error);
@@ -41,7 +41,7 @@ class SecurityUtils {
   /// Decrypt sensitive data
   static String decryptData(String encryptedData) {
     try {
-      final encrypted = Encrypted.fromBase64(encryptedData);
+      final encrypted = encrypt.Encrypted.fromBase64(encryptedData);
       return _encrypter.decrypt(encrypted, iv: _iv);
     } catch (error) {
       AppLogger.error('Decryption failed', error);

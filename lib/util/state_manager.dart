@@ -62,7 +62,7 @@ class StateData<T> {
 
 abstract class BaseStateController<T> extends GetxController {
   final Rx<StateData<T>> _state = StateData<T>().obs;
-  final String _cacheKey;
+  late final String _cacheKey;
   final Duration _cacheExpiry;
   final bool _enableCache;
 

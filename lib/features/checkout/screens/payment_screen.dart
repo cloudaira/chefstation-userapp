@@ -224,11 +224,11 @@ class MyInAppBrowser extends InAppBrowser {
   @override
   void onConsoleMessage(consoleMessage) {
     if (kDebugMode) {
-      // print("""
-    console output:
-      message: ${consoleMessage.message}
-      messageLevel: ${consoleMessage.messageLevel.toValue()}
-         // """);
+      print("""
+Console output:
+  message: ${consoleMessage.message}
+  messageLevel: ${consoleMessage.messageLevel.toValue()}
+""");
     }
   }
 
