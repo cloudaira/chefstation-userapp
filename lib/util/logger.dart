@@ -49,7 +49,7 @@ class AppLogger {
     }
     
     // In production, you can send logs to a service like Firebase Crashlytics
-    if (!kDebugMode && level == LogLevel.error || level == LogLevel.critical) {
+    if (!kDebugMode && (level == LogLevel.error || level == LogLevel.critical)) {
       // TODO: Implement production logging service
       // FirebaseCrashlytics.instance.recordError(error ?? message, stackTrace);
     }
