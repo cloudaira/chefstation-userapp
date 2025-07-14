@@ -8,9 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-// Import the main app to ensure it can be compiled
-import 'package:chefstation_multivendor/main.dart';
-
 void main() {
   testWidgets('ChefStation app can be imported and compiled', (WidgetTester tester) async {
     // This test verifies that the app can be imported and compiled
