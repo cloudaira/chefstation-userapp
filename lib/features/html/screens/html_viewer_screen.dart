@@ -71,7 +71,7 @@ class _HtmlViewerScreenState extends State<HtmlViewerScreen> {
                             ? 'cancellation_policy'.tr : 'no_data_found'.tr,
                           style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).hintColor),
                         ),
-                      ) : const SizedBox(),
+                      ) : const SizedBox.shrink(),
 
                       HtmlWidget(
                         htmlController.htmlText ?? '',
@@ -88,7 +88,7 @@ class _HtmlViewerScreenState extends State<HtmlViewerScreen> {
               ),
             ),
           ),
-        ) : Center(child: CircularProgressIndicator());
+        ) : const Center(child: CircularProgressIndicator());
       }),
     );
   }

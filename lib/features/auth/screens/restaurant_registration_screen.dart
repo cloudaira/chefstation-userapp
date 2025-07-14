@@ -85,7 +85,7 @@ class _RestaurantRegistrationScreenState extends State<RestaurantRegistrationScr
     super.initState();
     _tabController = TabController(length: _languageList!.length, initialIndex: 0, vsync: this);
     _countryDialCode = CountryCode.fromCountryCode(Get.find<SplashController>().configModel!.country!).dialCode;
-    for (var language in _languageList) {
+    for (var _ in _languageList) {
       if (kDebugMode) {
         // print(language);
       }
@@ -1208,7 +1208,7 @@ class _RestaurantRegistrationScreenState extends State<RestaurantRegistrationScr
           ) : const SizedBox(),
 
           restaurantRegistrationController.storeStatus == 0.9 ? const WebBusinessPlanWidget() : const SizedBox(),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
 
           Row(mainAxisAlignment: MainAxisAlignment.end, children: [
             Container(

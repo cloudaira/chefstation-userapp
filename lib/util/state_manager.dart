@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
+
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chefstation_multivendor/util/logger.dart';
@@ -145,6 +145,7 @@ abstract class BaseStateController<T> extends GetxController {
   }
 
   /// Refresh data with loading state
+  @override
   Future<void> refresh() async {
     setLoading('Refreshing...');
     try {

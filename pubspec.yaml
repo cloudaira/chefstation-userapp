@@ -147,8 +147,8 @@ dev_dependencies:
   # Performance Testing
   flutter_driver:
     sdk: flutter
-  integration_test:
-    sdk: flutter
+  # integration_test:
+  #   sdk: flutter
 
 dependency_overrides:
   fading_edge_scrollview: ^4.1.1

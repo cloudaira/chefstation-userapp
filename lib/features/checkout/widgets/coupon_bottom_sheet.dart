@@ -215,7 +215,7 @@ class _CouponBottomSheetState extends State<CouponBottomSheet> {
                     ),
 
                     GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
                         mainAxisSpacing: Dimensions.paddingSizeSmall, crossAxisSpacing: Dimensions.paddingSizeSmall,
                         childAspectRatio: 3,
@@ -281,10 +281,10 @@ class _CouponBottomSheetState extends State<CouponBottomSheet> {
                     _unavailableCouponList != null && _unavailableCouponList!.isNotEmpty ? Padding(
                       padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault, vertical: Dimensions.paddingSizeSmall),
                       child: Align(alignment: Alignment.centerLeft, child: Text('unavailable_promo'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault))),
-                    ) : const SizedBox(),
+                    ) : const SizedBox.shrink(),
 
                     _unavailableCouponList != null && _unavailableCouponList!.isNotEmpty ? GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
                         mainAxisSpacing: Dimensions.paddingSizeSmall, crossAxisSpacing: Dimensions.paddingSizeSmall,
                         childAspectRatio: 3,

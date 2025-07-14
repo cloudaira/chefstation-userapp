@@ -38,7 +38,7 @@ class _SupportScreenState extends State<SupportScreen> {
           color: Theme.of(context).cardColor,
           onPressed: () => Navigator.pop(context),
         ),
-        actions: [SizedBox()],
+        actions: const [SizedBox.shrink()],
       ),
       endDrawer: const MenuDrawerWidget(), endDrawerEnableOpenDragGesture: false,
       body: Center(

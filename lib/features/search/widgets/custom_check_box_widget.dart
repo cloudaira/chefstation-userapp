@@ -18,7 +18,7 @@ class CustomCheckBoxWidget extends StatelessWidget {
         onTap: onClick as void Function()?,
         child: Row(children: [
           Text(title, style: robotoRegular),
-          Spacer(),
+          const SizedBox(width: Dimensions.paddingSizeSmall),
 
           isRating ? Container(
             height: 20, width: 20,
@@ -27,7 +27,7 @@ class CustomCheckBoxWidget extends StatelessWidget {
               color: Theme.of(context).cardColor,
               border: Border.all(color: value ? Theme.of(context).primaryColor : Theme.of(context).disabledColor, width: 2),
             ),
-            padding: EdgeInsets.all(2),
+            padding: const EdgeInsets.all(2),
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,

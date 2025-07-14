@@ -207,7 +207,7 @@ class WebMenuBar extends StatelessWidget implements PreferredSizeWidget {
                         ),
                       ),
 
-                    ) : SizedBox.shrink(),
+                    ) : const SizedBox.shrink(),
 
                   ]);
                 }),

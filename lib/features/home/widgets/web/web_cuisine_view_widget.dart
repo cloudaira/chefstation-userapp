@@ -17,12 +17,12 @@ class WebCuisineViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CuisineController>(builder: (cuisineController) {
-      return (cuisineController.cuisineModel != null && cuisineController.cuisineModel!.cuisines!.isEmpty) ? const SizedBox() : Padding(
+      return (cuisineController.cuisineModel != null && cuisineController.cuisineModel!.cuisines!.isEmpty) ? const SizedBox.shrink() : Padding(
         padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeLarge),
         child: Container(
           height: 216, width: Dimensions.webMaxWidth,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(Dimensions.radiusSmall)),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(Dimensions.radiusSmall)),
           ),
           child: Stack(
             children: [
@@ -67,7 +67,7 @@ class WebCuisineViewWidget extends StatelessWidget {
                       onTap: () => Get.toNamed(RouteHelper.getCuisineRoute()),
                     ),
 
-                    const SizedBox(width: 35),
+                    const SizedBox(width: Dimensions.paddingSizeSmall),
                   ],
                   ): const WebCuisineShimmer()
                 ],

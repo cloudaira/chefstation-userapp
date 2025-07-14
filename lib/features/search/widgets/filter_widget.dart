@@ -51,7 +51,7 @@ class _FilterWidgetState extends State<FilterWidget> {
 
         return Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-          SizedBox(height: Dimensions.paddingSizeSmall),
+          const SizedBox(height: Dimensions.paddingSizeSmall),
 
           !ResponsiveHelper.isDesktop(context) ? Column(children: [
             SizedBox(
@@ -115,7 +115,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                   }).toList(),
                 ),
 
-                Divider(thickness: 1.5, height: Dimensions.paddingSizeLarge),
+                const Divider(thickness: 1.5, height: Dimensions.paddingSizeLarge),
 
                 Text('filter_by'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
                 const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -211,7 +211,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                   },
                 ) : const SizedBox(),
 
-                widget.isRestaurant ? const SizedBox() : Divider(thickness: 1.5, height: Dimensions.paddingSizeLarge),
+                widget.isRestaurant ? const SizedBox() : const Divider(thickness: 1.5, height: Dimensions.paddingSizeLarge),
 
                 widget.isRestaurant ? const SizedBox() : Column(children: [
                   Align(alignment: Alignment.centerLeft, child: Row(
@@ -241,14 +241,14 @@ class _FilterWidgetState extends State<FilterWidget> {
                   const SizedBox(height: Dimensions.paddingSizeSmall),
                 ]),
 
-                Divider(thickness: 1.5, height: Dimensions.paddingSizeLarge),
+                const Divider(thickness: 1.5, height: Dimensions.paddingSizeLarge),
 
                 Text('rating'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
 
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeDefault),
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: ratings.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
@@ -312,7 +312,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                 //   ),
                 // ),
 
-                widget.isRestaurant ? Divider(thickness: 1.5, height: Dimensions.paddingSizeOverLarge) : const SizedBox(),
+                widget.isRestaurant ? const Divider(thickness: 1.5, height: Dimensions.paddingSizeOverLarge) : const SizedBox(),
 
                 widget.isRestaurant ? GetBuilder<CuisineController>(
                     builder: (cuisineController) {
@@ -323,7 +323,7 @@ class _FilterWidgetState extends State<FilterWidget> {
                           const SizedBox(height: Dimensions.paddingSizeDefault),
 
                           ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             itemCount: showAllCuisine ? cuisineController.cuisineModel!.cuisines!.length
                                 : cuisineController.cuisineModel!.cuisines!.length > 4 ? 4 : cuisineController.cuisineModel!.cuisines!.length,
                             shrinkWrap: true,
@@ -366,8 +366,8 @@ class _FilterWidgetState extends State<FilterWidget> {
           Container(
             decoration: BoxDecoration(
               color: Theme.of(context).cardColor,
-              borderRadius: ResponsiveHelper.isDesktop(context) ? BorderRadius.only(bottomLeft: Radius.circular(Dimensions.radiusDefault), bottomRight: Radius.circular(Dimensions.radiusDefault)) : null,
-              boxShadow: [BoxShadow(color: Theme.of(context).disabledColor.withValues(alpha: 0.3), offset: Offset(0, -3), blurRadius: 10)],
+              borderRadius: ResponsiveHelper.isDesktop(context) ? const BorderRadius.only(bottomLeft: Radius.circular(Dimensions.radiusDefault), bottomRight: Radius.circular(Dimensions.radiusDefault)) : null,
+              boxShadow: [BoxShadow(color: Theme.of(context).disabledColor.withValues(alpha: 0.3), offset: const Offset(0, -3), blurRadius: 10)],
             ),
             padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault, vertical: Dimensions.paddingSizeDefault),
             child: SafeArea(

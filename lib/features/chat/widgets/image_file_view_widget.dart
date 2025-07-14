@@ -109,7 +109,7 @@ class _ImageFileViewWidgetState extends State<ImageFileViewWidget> {
               ),
 
               if(Get.find<ChatController>().isVideoExtension(url) && !GetPlatform.isWeb)
-                Center(child: Icon(Icons.play_circle, color: Colors.white,)),
+                const Center(child: Icon(Icons.play_circle, color: Colors.white,)),
 
               if(!showAllImages && (widget.isRightMessage ? (isDesktop ? index == 0 : index == 2 ) : (isDesktop ? index == 3 : index == 3))
                   && widget.currentMessage.filesFullUrl!.length > 3 && widget.currentMessage.filesFullUrl!.length != 4)
@@ -146,7 +146,7 @@ class _ImageFileViewWidgetState extends State<ImageFileViewWidget> {
         : thumbnailList.isNotEmpty && thumbnailList[index] != null ? Image.file(
       File(thumbnailList[index]!.path),
       fit: BoxFit.cover, height: double.infinity, width: double.infinity,
-    ) : const SizedBox();
+    ) : const SizedBox.shrink();
   }
 
 

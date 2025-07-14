@@ -1,5 +1,4 @@
-import 'package:chefstation_multivendor/data_source/cache_response.dart';
-import 'package:chefstation_multivendor/data_source/cache_response.g.dart';
+import '../data_source/cache_response.dart';
 
 final database = AppDatabase();
 

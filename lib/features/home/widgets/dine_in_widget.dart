@@ -13,22 +13,23 @@ class DineInWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeSmall,
         left: Dimensions.paddingSizeDefault, right: Dimensions.paddingSizeOverLarge,
       ),
-      margin: EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault, vertical: Dimensions.paddingSizeSmall),
+      margin: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault, vertical: Dimensions.paddingSizeSmall),
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
 
-        CustomAssetImageWidget(Images.dineInUser, height: 65, width: 80),
+        const CustomAssetImageWidget(Images.dineInUser, height: 65, width: 80),
 
         Column(children: [
 
           Text('want_to_dine_in'.tr, style: robotoBold),
+                      const SizedBox(height: Dimensions.paddingSizeSmall),
           CustomButtonWidget(
             width: 115, height: 35, radius: Dimensions.radiusSmall,
             buttonText: 'view_restaurants'.tr,

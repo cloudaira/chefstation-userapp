@@ -48,7 +48,7 @@ class DineInRestaurantsCardWidget extends StatelessWidget {
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                   Row(children: [
                     Container(
-                      padding: EdgeInsets.all(3),
+                      padding: const EdgeInsets.all(3),
                       height: 65, width: 65,
                       decoration:  BoxDecoration(
                         color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
@@ -75,9 +75,9 @@ class DineInRestaurantsCardWidget extends StatelessWidget {
                             overflow: TextOverflow.ellipsis, maxLines: 1,
                             style: robotoMedium.copyWith(fontWeight: FontWeight.w600),
                           ),
-                          SizedBox(height: Dimensions.paddingSizeExtraSmall),
+                          const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-                          characteristics.isNotEmpty ? Text(characteristics, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)) : const SizedBox(),
+                          characteristics.isNotEmpty ? Text(characteristics, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)) : const SizedBox.shrink(),
                           SizedBox(height: characteristics.isNotEmpty ? Dimensions.paddingSizeExtraSmall : 0),
 
                           Row(mainAxisAlignment: MainAxisAlignment.start, children: [

@@ -308,7 +308,7 @@ class _MapViewScreenState extends State<MapViewScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.white,
-                    boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
+                    boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
                   ),
                   child: Icon(Icons.my_location_outlined, color: Theme.of(context).hintColor, size: 25),
                 ),

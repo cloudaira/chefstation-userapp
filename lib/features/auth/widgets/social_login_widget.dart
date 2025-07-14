@@ -127,7 +127,7 @@ class SocialLoginWidget extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(Dimensions.radiusDefault)),
               boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 700 : 300]!, spreadRadius: 1, blurRadius: 5, offset: const Offset(2, 2))],
             ),
-            margin: EdgeInsets.only(bottom: Dimensions.paddingSizeOverLarge),
+            margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeOverLarge),
             child: CustomInkWellWidget(
               onTap: onOtpViewClick!,
               radius: Dimensions.radiusDefault,

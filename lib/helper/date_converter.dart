@@ -279,7 +279,7 @@ class DateConverter {
         date1.day == date2.day;
   }
   static bool isTomorrow(DateTime date1) {
-    DateTime date2 = DateTime.now().add(Duration(days: 1));
+    DateTime date2 = DateTime.now().add(const Duration(days: 1));
     return date1.year == date2.year &&
         date1.month == date2.month &&
         date1.day == date2.day;

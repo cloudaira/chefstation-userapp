@@ -26,8 +26,8 @@ class ItemViewWidget extends StatelessWidget {
                   fromSearch: true,
                   ),
 
-                  searchController.paginate ? Center(child: Padding(
-                    padding: const EdgeInsets.only(bottom: Dimensions.paddingSizeExtraOverLarge),
+                  searchController.paginate ? const Center(child: Padding(
+                    padding: EdgeInsets.only(bottom: Dimensions.paddingSizeExtraOverLarge),
                     child: CircularProgressIndicator(),
                   )) : const SizedBox(),
                 ],

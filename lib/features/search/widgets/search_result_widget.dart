@@ -111,7 +111,7 @@ class SearchResultWidgetState extends State<SearchResultWidget> with TickerProvi
 
       Expanded(child: TabBarView(
         controller: _tabController,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           ItemViewWidget(isRestaurant: false, scrollController: scrollController),
           ItemViewWidget(isRestaurant: true, scrollController: scrollController),

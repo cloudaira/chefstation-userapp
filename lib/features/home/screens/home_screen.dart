@@ -306,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         )
                     ),
-                    actions: const [SizedBox()],
+                    actions: const [SizedBox.shrink()],
                   ),
 
                   // Search Button
@@ -371,7 +371,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         _configModel!.mostReviewedFoods == 1 ?  const BestReviewItemViewWidget(isPopular: false) : const SizedBox(),
 
-                        _configModel.dineInOrderOption! ? DineInWidget() : const SizedBox(),
+                        _configModel.dineInOrderOption! ? const DineInWidget() : const SizedBox(),
 
                         const CuisineViewWidget(),
 

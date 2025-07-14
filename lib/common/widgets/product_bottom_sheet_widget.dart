@@ -80,7 +80,7 @@ class _ProductBottomSheetWidgetState extends State<ProductBottomSheetWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 550,
-      margin: EdgeInsets.only(top: GetPlatform.isWeb ? 0 : 30),
+      margin: const EdgeInsets.only(top: 30),
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: ResponsiveHelper.isMobile(context) ? const BorderRadius.vertical(top: Radius.circular(Dimensions.radiusExtraLarge))
@@ -337,7 +337,7 @@ class _ProductBottomSheetWidgetState extends State<ProductBottomSheetWidget> {
                                       Text(product!.variations![index].name!, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
 
                                       AnimatedContainer(
-                                        duration: Duration(milliseconds: 800),
+                                        duration: const Duration(milliseconds: 800),
                                         curve: Curves.easeIn,
                                         decoration: BoxDecoration(
                                           color: product!.variations![index].required! ? (product!.variations![index].multiSelect! ? product!.variations![index].min! : 1) > selectedCount

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'dart:ui' as ui;
@@ -16,7 +16,7 @@ class MarkerHelper{
   }) async {
     try {
       if(GetPlatform.isWeb) {
-        return await BitmapDescriptor.fromAssetImage(const ImageConfiguration(), imagePath);
+        return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue);
       }
       final ByteData byteDataFromImage = await rootBundle.load(imagePath).timeout(const Duration(seconds: 8));
       final ui.Codec codec = await ui

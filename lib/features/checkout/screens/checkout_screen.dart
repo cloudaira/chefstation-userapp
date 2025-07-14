@@ -174,14 +174,14 @@ class CheckoutScreenState extends State<CheckoutScreen> {
 
   Future<void> _selectDineIn() async {
 
-    Future.delayed(Duration(milliseconds: 800), () {
+    Future.delayed(const Duration(milliseconds: 800), () {
       Get.find<CheckoutController>().setOrderType('dine_in', notify: true);
-      Future.delayed(Duration(milliseconds: 500), () {
+      Future.delayed(const Duration(milliseconds: 500), () {
         if(Get.find<CheckoutController>().restaurant != null && Get.find<CheckoutController>().distance != null) {
           Get.find<CheckoutController>().setOrderType('dine_in', notify: true);
           _animateDeliverySection();
         } else {
-          Future.delayed(Duration(seconds: 3), () {
+          Future.delayed(const Duration(seconds: 3), () {
             Get.find<CheckoutController>().setOrderType('dine_in', notify: true);
             _animateDeliverySection();
           });
@@ -195,7 +195,7 @@ class CheckoutScreenState extends State<CheckoutScreen> {
     if(deliveryOptionScrollController.hasClients) {
       deliveryOptionScrollController.animateTo(
         deliveryOptionScrollController.position.maxScrollExtent, // Scroll to the end
-        duration: Duration(milliseconds: 500), // Set the duration of the animation
+        duration: const Duration(milliseconds: 500), // Set the duration of the animation
         curve: Curves.easeOut, // Set the curve for the animation
       );
     }

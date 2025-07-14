@@ -185,7 +185,7 @@ class WebProfileWidget extends StatelessWidget {
 
               isLoggedIn ? ProfileButtonWidget(icon: Icons.lock, title: 'change_password'.tr, onTap: () {
                 // Get.toNamed(RouteHelper.getResetPasswordRoute('', '', 'password-change'));
-                Get.dialog(NewPassScreen(fromPasswordChange: true, fromDialog: true, resetToken: '', number: ''));
+                Get.dialog(const NewPassScreen(fromPasswordChange: true, fromDialog: true, resetToken: '', number: ''));
               }) : const SizedBox(),
 
               isLoggedIn ? ProfileButtonWidget(icon: Icons.edit, title: 'edit_profile'.tr, onTap: () {

@@ -75,7 +75,7 @@ class MapScreenState extends State<MapScreen> {
               child: Column(
                 children: [
 
-                  widget.fromDineInOrder ? SizedBox() : Align(
+                  widget.fromDineInOrder ? const SizedBox.shrink() : Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
                       onTap: () => _checkPermission(() async {

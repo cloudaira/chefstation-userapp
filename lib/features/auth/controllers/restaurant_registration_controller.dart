@@ -104,8 +104,7 @@ class RestaurantRegistrationController extends GetxController implements GetxSer
         } else if(data.fieldType == 'check_box') {
           _additionalList!.add([]);
           if(data.checkData != null) {
-            for (var element in data.checkData!) {
-              // debugPrint(element);
+            for (var _ in data.checkData!) {
               _additionalList![index].add(0);
             }
           }

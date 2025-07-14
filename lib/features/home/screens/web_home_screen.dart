@@ -59,7 +59,7 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
 
         SliverToBoxAdapter(child: GetBuilder<HomeController>(builder: (bannerController) {
           return bannerController.bannerImageList == null ? WebBannerViewWidget(homeController: bannerController)
-              : bannerController.bannerImageList!.isEmpty ? const SizedBox() : WebBannerViewWidget(homeController: bannerController);
+              : bannerController.bannerImageList!.isEmpty ? const SizedBox.shrink() : WebBannerViewWidget(homeController: bannerController);
         })),
 
 
@@ -78,7 +78,7 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
 
                 _configModel!.popularFood == 1 ?  const BestReviewItemViewWidget(isPopular: false) : const SizedBox(),
 
-                _configModel!.dineInOrderOption! ? WebDineInWidget() : const SizedBox(),
+                _configModel!.dineInOrderOption! ? const WebDineInWidget() : const SizedBox(),
 
                 const WebCuisineViewWidget(),
 
@@ -94,7 +94,7 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
 
                 const PromotionalBannerViewWidget(),
 
-                const SizedBox(width: Dimensions.paddingSizeExtraSmall),
+                const SizedBox(width: Dimensions.paddingSizeSmall),
 
               ]),
             ))

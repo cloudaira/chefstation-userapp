@@ -99,7 +99,7 @@ class LocationController extends GetxController implements GetxService {
       _isLoading = true;
     }
     if(!updateInAddress){
-      Future.delayed(Duration(seconds: 10), () {
+      Future.delayed(const Duration(seconds: 10), () {
         update();
       });
 

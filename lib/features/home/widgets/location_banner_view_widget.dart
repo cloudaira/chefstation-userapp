@@ -60,7 +60,7 @@ class LocationBannerViewWidget extends StatelessWidget {
           const SizedBox(width: Dimensions.paddingSizeSmall),
 
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             Stack(clipBehavior: Clip.none, children: [
               CustomButtonWidget(
@@ -74,7 +74,7 @@ class LocationBannerViewWidget extends StatelessWidget {
 
               Positioned(
                 top: ResponsiveHelper.isDesktop(context) ? -30 : -25, right: 0, left: 0,
-                child: SizedBox(
+                child: const SizedBox(
                   height: 40, width: 40,
                   child: CustomAssetImageWidget(
                     Images.nearbyLocation,
@@ -88,7 +88,7 @@ class LocationBannerViewWidget extends StatelessWidget {
 
             SizedBox(height: ResponsiveHelper.isMobile(context) ? Dimensions.paddingSizeDefault : 0),
           ]),
-          SizedBox(width: ResponsiveHelper.isMobile(context) ? Dimensions.paddingSizeSmall : 0),
+          const SizedBox(width: Dimensions.paddingSizeSmall),
         ]),
       ),
     );

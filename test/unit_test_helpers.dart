@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:chefstation_multivendor/util/logger.dart';
-import 'package:chefstation_multivendor/util/error_handler.dart';
 import 'package:chefstation_multivendor/util/state_manager.dart';
 import 'unit_test_helpers.mocks.dart';
 
@@ -140,7 +138,6 @@ class TestUtils {
 abstract class BaseTest {
   late MockSharedPreferences mockSharedPreferences;
 
-  @setUp
   Future<void> setUp() async {
     // Initialize mocks
     mockSharedPreferences = await TestUtils.createMockSharedPreferences();
@@ -152,7 +149,6 @@ abstract class BaseTest {
     // AppLogger.debug = (String message) {}; // Disable debug logs
   }
 
-  @tearDown
   Future<void> tearDown() async {
     // Clean up
     Get.reset();
@@ -303,7 +299,7 @@ class PerformanceTestUtils {
     await operation();
     stopwatch.stop();
     
-    print('Performance: $operationName took ${stopwatch.elapsedMilliseconds}ms');
+    // print('Performance: $operationName took ${stopwatch.elapsedMilliseconds}ms');
   }
 
   static Future<void> measureWidgetBuild(

@@ -71,8 +71,8 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
             },
             label: Row(children: [
 
-              CustomAssetImageWidget(Images.dineInMap, height: 24, width: 24),
-              SizedBox(width: Dimensions.paddingSizeSmall),
+              const CustomAssetImageWidget(Images.dineInMap, height: 24, width: 24),
+              const SizedBox(width: Dimensions.paddingSizeSmall),
 
               Text('view_from_map'.tr, style: robotoMedium.copyWith(color: Colors.white, fontSize: Dimensions.fontSizeLarge)),
 
@@ -89,53 +89,51 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
               child: Column(mainAxisSize: MainAxisSize.min,
                 children: [
 
-                  SizedBox(height: Dimensions.paddingSizeSmall),
+                  const SizedBox(height: Dimensions.paddingSizeSmall),
 
                   ResponsiveHelper.isDesktop(context) ? Container(
                     height: 64, color: Theme.of(context).primaryColor.withValues(alpha: 0.10),
-                    padding: EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
+                    padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
                     child: Row(children: [
                       Text(
                         'restaurant_list'.tr,
                         style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge, fontWeight: FontWeight.w600),
                       ),
 
-                      Spacer(),
+                      const Spacer(),
 
                       InkWell(
-                        onTap: () => Get.toNamed(RouteHelper.getMapViewRoute(fromDineInScreen: true)),
+                        onTap: () {
+                          Get.toNamed(RouteHelper.getMapViewRoute(fromDineInScreen: true));
+                        },
                         child: Container(
                           width: 180,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                             color: Colors.black,
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeExtraSmall),
-                          // alignment: Alignment.center,
+                          padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeExtraSmall),
                           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-
-                            CustomAssetImageWidget(Images.dineInMap, height: 24, width: 24),
-                            SizedBox(width: Dimensions.paddingSizeSmall),
-
+                            const CustomAssetImageWidget(Images.dineInMap, height: 24, width: 24),
+                            const SizedBox(width: Dimensions.paddingSizeSmall),
                             Text('view_from_map'.tr, style: robotoMedium.copyWith(color: Colors.white, fontSize: Dimensions.fontSizeSmall)),
-
                           ]),
                         ),
                       ),
 
-                      SizedBox(width: Dimensions.paddingSizeSmall),
+                      const SizedBox(width: Dimensions.paddingSizeSmall),
 
-                      InkWell(
-                        onTap: () {
-                          Get.dialog(Dialog(child: const DineRestaurantFilterBottomSheet()));
-                        },
+                                              InkWell(
+                          onTap: () {
+                            Get.dialog(const Dialog(child: DineRestaurantFilterBottomSheet()));
+                          },
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                             border: Border.all(color: Theme.of(context).primaryColor),
                             color: Theme.of(context).cardColor,
                           ),
-                          padding: EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
+                          padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
                           child: Icon(Icons.filter_list_outlined, color: Theme.of(context).primaryColor),
                         ),
                       ),
@@ -162,7 +160,7 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
                           Text('there_is_no_restaurant'.tr, style: robotoMedium.copyWith(color: Theme.of(context).disabledColor)),
                         ],
                       ),
-                    )) : DineInRestaurantShimmerWidget();
+                    )) : const DineInRestaurantShimmerWidget();
                   }),
                 ],
               ),
@@ -184,7 +182,7 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
         crossAxisSpacing: Dimensions.paddingSizeLarge,
         mainAxisExtent: 230,
       ),
-      padding: ResponsiveHelper.isDesktop(context) ? EdgeInsets.zero : EdgeInsets.only(left: Dimensions.paddingSizeDefault, right: Dimensions.paddingSizeDefault, bottom: 100),
+      padding: ResponsiveHelper.isDesktop(context) ? EdgeInsets.zero : const EdgeInsets.only(left: Dimensions.paddingSizeDefault, right: Dimensions.paddingSizeDefault, bottom: 100),
       itemBuilder: (context, index) {
 
         Restaurant restaurant = restaurants[index];
@@ -215,7 +213,7 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
                   SizedBox(
                     height: 114,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(Dimensions.radiusDefault),
                         topRight: Radius.circular(Dimensions.radiusDefault),
                       ),
@@ -287,26 +285,29 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
                   Positioned(
                     top: 105, left: 10,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          height: 80, width: 80,
-                          decoration:  BoxDecoration(
-                            color: Theme.of(context).cardColor,
+                        restaurant.discount != null && restaurant.discount!.discount != null && restaurant.discount!.discount! > 0 ? Container(
+                          padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraSmall, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                            border: Border.all(color: Theme.of(context).disabledColor.withValues(alpha: 0.2), width: 2.5),
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(3.5),
-                            child: CustomImageWidget(
-                              image: restaurant.logoFullUrl ?? '',
-                              fit: BoxFit.cover, height: 70, width: 70,
-                              isRestaurant: true,
-                            ),
+                          child: Text('${restaurant.discount!.discount}% ${'off'.tr}', style: robotoMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeSmall)),
+                        ) : const SizedBox(),
+                        restaurant.cuisineNames != null && restaurant.cuisineNames!.isNotEmpty ? Container(
+                          margin: const EdgeInsets.only(top: 5),
+                          padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraSmall, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
                           ),
-                        ),
+                          child: Text(restaurant.cuisineNames!.first.name ?? '', style: robotoMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeSmall)),
+                        ) : const SizedBox(),
                       ],
                     ),
                   ),
+
                 ]),
 
                 Padding(
@@ -324,7 +325,7 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
                           style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
                           maxLines: 1, overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: Dimensions.paddingSizeExtraSmall),
+                        const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                         Text(
                           restaurant.address ?? '',
@@ -334,10 +335,10 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
 
                       ]),
                     ),
-                    SizedBox(width: Dimensions.paddingSizeSmall),
+                    const SizedBox(width: Dimensions.paddingSizeSmall),
 
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeLarge),
+                      padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeLarge),
                       decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
@@ -345,7 +346,7 @@ class _DineInRestaurantScreenState extends State<DineInRestaurantScreen> {
                       child: Row(children: [
 
                         Icon(Icons.star, color: Theme.of(context).primaryColor, size: 18),
-                        SizedBox(width: Dimensions.paddingSizeExtraSmall),
+                        const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                         Text(restaurant.avgRating!.toStringAsFixed(1), style: robotoBold.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color)),
 
                       ]),

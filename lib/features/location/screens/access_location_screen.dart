@@ -140,7 +140,7 @@ class _AccessLocationScreenState extends State<AccessLocationScreen> {
             child: Center(child: Padding(
               padding: context.width > 700 ? const EdgeInsets.all(50) : EdgeInsets.zero,
               child: SizedBox(width: 700, child: Column(children: [
-                CustomAssetImageWidget(Images.deliveryLocation, height: 220),
+                const CustomAssetImageWidget(Images.deliveryLocation, height: 220),
                 const SizedBox(height: Dimensions.paddingSizeLarge),
                 Text(
                   'find_restaurants_and_foods'.tr.toUpperCase(), textAlign: TextAlign.center,

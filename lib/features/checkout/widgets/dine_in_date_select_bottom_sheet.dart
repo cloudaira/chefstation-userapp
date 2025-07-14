@@ -44,10 +44,10 @@ class _DineInDateSelectBottomSheetState extends State<DineInDateSelectBottomShee
               borderRadius: BorderRadius.circular(5),
             ),
           ),
-          SizedBox(height: Dimensions.paddingSizeLarge),
+          const SizedBox(height: Dimensions.paddingSizeLarge),
 
           Text('select_your_date'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge), textAlign: TextAlign.center),
-          SizedBox(height: Dimensions.paddingSizeLarge),
+          const SizedBox(height: Dimensions.paddingSizeLarge),
 
           SfDateRangePicker(
             backgroundColor: Theme.of(context).cardColor,
@@ -114,7 +114,7 @@ class _DineInDateSelectBottomSheetState extends State<DineInDateSelectBottomShee
           //   SizedBox(width: 80),
           //
           // ]),
-          SizedBox(height: Dimensions.paddingSizeLarge),
+          const SizedBox(height: Dimensions.paddingSizeLarge),
 
           CustomButtonWidget(
             buttonText: 'done'.tr,

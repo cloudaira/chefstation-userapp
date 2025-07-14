@@ -21,7 +21,7 @@ class AddFundBottomSheet extends StatelessWidget {
     return Container(
       width: 550,
       margin: EdgeInsets.only(top: GetPlatform.isWeb ? 0 : 30),
-      padding: EdgeInsets.all(Dimensions.paddingSizeLarge),
+      padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
       constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.9),
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
@@ -36,7 +36,7 @@ class AddFundBottomSheet extends StatelessWidget {
              onPressed: (){
                 Navigator.pop(context);
              },
-             icon: Icon(Icons.clear),
+             icon: const Icon(Icons.clear),
          ),
        ) : Container(
           height: 5, width: 70,
@@ -44,7 +44,7 @@ class AddFundBottomSheet extends StatelessWidget {
             color: Theme.of(context).disabledColor.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(50),
           ),
-          margin: EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
+          margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
         ),
 
         Text(

@@ -99,7 +99,7 @@ class Theme1HomeScreen extends StatelessWidget {
               ),
             ]),
           )),
-          actions: const [SizedBox()],
+          actions: const [SizedBox.shrink()],
         ),
 
         // Search Button
@@ -150,7 +150,7 @@ class Theme1HomeScreen extends StatelessWidget {
               isLogin ? const PopularStoreWidget1(isOrderAgainViewed: true, isPopular: false) : const SizedBox(),
               isLogin ? const OrderAgainViewWidget() : const SizedBox(),
               configModel.mostReviewedFoods == 1 ? const BestReviewedItemWidget1() : const SizedBox(),
-              configModel.dineInOrderOption! ? DineInWidget() : const SizedBox(),
+              configModel.dineInOrderOption! ? const DineInWidget() : const SizedBox(),
               const ReferBannerViewWidget(fromTheme1: true),
               isLogin ? const PopularStoreWidget1(isPopular: false, isRecentlyViewed: true) : const SizedBox(),
               const CuisinesWidget1(),

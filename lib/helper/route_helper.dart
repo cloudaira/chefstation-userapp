@@ -358,7 +358,7 @@ class RouteHelper {
       pageIndex: Get.parameters['page'] == 'home' ? 0 : Get.parameters['page'] == 'favourite' ? 1
           : Get.parameters['page'] == 'cart' ? 2 : Get.parameters['page'] == 'order' ? 3 : Get.parameters['page'] == 'menu' ? 4 : 0,
     ))),
-    GetPage(name: forgotPassword, page: () => ForgetPassScreen()),
+    GetPage(name: forgotPassword, page: () => const ForgetPassScreen()),
     GetPage(name: resetPassword, page: () => NewPassScreen(
       resetToken: Get.parameters['token'], number: Get.parameters['phone'], fromPasswordChange: Get.parameters['page'] == 'password-change',
     )),

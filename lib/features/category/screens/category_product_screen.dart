@@ -275,7 +275,7 @@ class CategoryProductScreenState extends State<CategoryProductScreen> with Ticke
                             children: [
                               ProductViewWidget(
                                 isRestaurant: false, products: products, restaurants: null, noDataText: 'no_category_food_found'.tr,
-                                padding: EdgeInsets.all(Dimensions.paddingSizeDefault),
+                                padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
                               ),
 
                               catController.isLoading ? Center(
@@ -300,7 +300,7 @@ class CategoryProductScreenState extends State<CategoryProductScreen> with Ticke
                             children: [
                               ProductViewWidget(
                                 isRestaurant: true, products: null, restaurants: restaurants, noDataText: 'no_category_restaurant_found'.tr,
-                                padding: EdgeInsets.all(Dimensions.paddingSizeDefault),
+                                padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
                               ),
 
                               catController.isLoading ? Center(

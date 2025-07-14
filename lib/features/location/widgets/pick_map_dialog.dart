@@ -146,7 +146,7 @@ class _PickMapDialogState extends State<PickMapDialog> {
                             decoration: BoxDecoration(
                               color: Theme.of(context).cardColor,
                               borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
+                              boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
                             ),
                             child: Column(children: [
                               IconButton(
@@ -157,7 +157,7 @@ class _PickMapDialogState extends State<PickMapDialog> {
                                   //   CameraPosition(target: _cameraPosition!.target, zoom: _currentZoom),
                                   // ));
                                 },
-                                icon: Icon(Icons.add, ),
+                                icon: const Icon(Icons.add, ),
                               ),
                               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
@@ -169,7 +169,7 @@ class _PickMapDialogState extends State<PickMapDialog> {
                                   //   CameraPosition(target: _cameraPosition!.target, zoom: _currentZoom),
                                   // ));
                                 },
-                                icon: Icon(Icons.remove, ),
+                                icon: const Icon(Icons.remove, ),
                               ),
 
                             ]),

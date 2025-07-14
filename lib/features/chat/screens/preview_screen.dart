@@ -142,11 +142,11 @@ class _PreviewScreenState extends State<PreviewScreen> {
                     shape: BoxShape.circle,
                     border: Border.all(color: isDesktop ? Colors.white : Colors.black),
                   ),
-                  margin: EdgeInsets.only(left: Dimensions.paddingSizeSmall),
+                  margin: const EdgeInsets.only(left: Dimensions.paddingSizeSmall),
                   child: CustomInkWellWidget(
                     onTap: _previousPage,
                     radius: 50,
-                    padding: EdgeInsets.all(Dimensions.paddingSizeSmall),
+                    padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
                     child: Icon(Icons.arrow_back, color: isDesktop ? Colors.white : Colors.black),
                   ),
                 ),
@@ -160,11 +160,11 @@ class _PreviewScreenState extends State<PreviewScreen> {
                     shape: BoxShape.circle,
                     border: Border.all(color: isDesktop ? Colors.white : Colors.black),
                   ),
-                  margin: EdgeInsets.only(right: Dimensions.paddingSizeSmall),
+                  margin: const EdgeInsets.only(right: Dimensions.paddingSizeSmall),
                   child: CustomInkWellWidget(
                     onTap: _nextPage,
                     radius: 50,
-                    padding: EdgeInsets.all(Dimensions.paddingSizeSmall),
+                    padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
                     child: Icon(Icons.arrow_forward, color: isDesktop ? Colors.white : Colors.black),
                   ),
                 ),
@@ -178,13 +178,13 @@ class _PreviewScreenState extends State<PreviewScreen> {
 
   void _nextPage() {
     if (_currentPage < widget.images.length - 1) {
-      _pageController.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+      _pageController.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
     }
   }
 
   void _previousPage() {
     if (_currentPage > 0) {
-      _pageController.previousPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+      _pageController.previousPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
     }
   }
 }

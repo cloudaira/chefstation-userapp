@@ -31,7 +31,7 @@ class AllRestaurantFilterWidget extends StatelessWidget {
                     ),
                   ]),
 
-                  const Expanded(child: SizedBox()),
+                  const Expanded(child: SizedBox.shrink()),
 
                   filter(context, restaurantController),
                   const SizedBox(width: Dimensions.paddingSizeSmall),
@@ -60,7 +60,7 @@ class AllRestaurantFilterWidget extends StatelessWidget {
               filter(context, restaurantController),
               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-              Divider(),
+              const Divider(),
             ]),
           ),
         );

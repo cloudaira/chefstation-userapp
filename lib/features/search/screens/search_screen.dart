@@ -97,7 +97,7 @@ class SearchScreenState extends State<SearchScreen> {
               height: isDesktop ? 100 : 80,
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
-                boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 10, spreadRadius: 2, offset: Offset(0, 5))],
+                boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 10, spreadRadius: 2, offset: const Offset(0, 5))],
               ),
               child: Center(child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 SizedBox(width: Dimensions.webMaxWidth, child: Row(children: [
@@ -116,7 +116,7 @@ class SearchScreenState extends State<SearchScreen> {
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Theme.of(context).primaryColor, width: 0.3),
                     ),
-                    padding: EdgeInsets.only(left: Dimensions.paddingSizeDefault),
+                    padding: const EdgeInsets.only(left: Dimensions.paddingSizeDefault),
                     child: Row(children: [
 
                       Expanded(child: SearchFieldWidget(
@@ -361,7 +361,7 @@ class SearchScreenState extends State<SearchScreen> {
           child: foodsAndRestaurants.isNotEmpty ? ListView.builder(
             itemCount: foodsAndRestaurants.length,
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(foodsAndRestaurants[index]),

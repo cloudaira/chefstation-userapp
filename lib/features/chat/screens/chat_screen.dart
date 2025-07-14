@@ -236,7 +236,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             color: Theme.of(context).disabledColor.withValues(alpha: 0.1),
                             borderRadius: isDesktop ? BorderRadius.circular(Dimensions.radiusSmall) : null,
                           ),
-                          margin: isDesktop ? EdgeInsets.only(bottom: Dimensions.paddingSizeSmall, left: Dimensions.paddingSizeSmall, right: Dimensions.paddingSizeSmall) : EdgeInsets.zero,
+                          margin: isDesktop ? const EdgeInsets.only(bottom: Dimensions.paddingSizeSmall, left: Dimensions.paddingSizeSmall, right: Dimensions.paddingSizeSmall) : EdgeInsets.zero,
                           child: Column(children: [
 
                             chatController.takeImageLoading && !isDesktop ? const LinearProgressIndicator(minHeight: 2) : const SizedBox(),

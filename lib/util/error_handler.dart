@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:chefstation_multivendor/util/logger.dart';
-import 'package:chefstation_multivendor/util/messages.dart';
+
 import 'package:chefstation_multivendor/common/widgets/custom_snackbar_widget.dart';
 
 enum ErrorType {

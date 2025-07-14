@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:get/get.dart';
 
 enum LogLevel {
   debug,
@@ -76,8 +75,8 @@ class AppLogger {
     }
   }
 
-  static void apiError(String endpoint, int statusCode, String error) {
-    error('API Error: $endpoint ($statusCode) - $error');
+  static void apiError(String endpoint, int statusCode, String errorMessage) {
+    error('API Error: $endpoint ($statusCode) - $errorMessage');
   }
 
   // User action logging
@@ -98,4 +97,4 @@ class AppLogger {
       debug('Performance: $operation took ${duration.inMilliseconds}ms');
     }
   }
-} 
+}

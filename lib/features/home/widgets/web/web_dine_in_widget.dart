@@ -39,18 +39,18 @@ class _WebDineInWidgetState extends State<WebDineInWidget> {
         ),
         child: Row(children: [
 
-          CustomAssetImageWidget(
+          const CustomAssetImageWidget(
             Images.dineInUser,
             height: 100, width: 130,
           ),
-          SizedBox(width: Dimensions.paddingSizeExtraOverLarge),
+          const SizedBox(width: Dimensions.paddingSizeExtraOverLarge),
 
           Expanded(child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('want_to_dine_in'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
-              SizedBox(height: Dimensions.paddingSizeDefault),
+              const SizedBox(height: Dimensions.paddingSizeDefault),
 
               dineInController.dineInModel != null ? SizedBox(
                 height: 100,
@@ -92,7 +92,7 @@ class _WebDineInWidgetState extends State<WebDineInWidget> {
                                 Stack(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.all(3),
+                                      padding: const EdgeInsets.all(3),
                                       height: 65, width: 65,
                                       decoration:  BoxDecoration(
                                         color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
@@ -108,7 +108,7 @@ class _WebDineInWidgetState extends State<WebDineInWidget> {
                                       ),
                                     ),
 
-                                    isAvailable ? const SizedBox() : const NotAvailableWidget(isRestaurant: true),
+                                    isAvailable ? const SizedBox.shrink() : const NotAvailableWidget(isRestaurant: true),
 
                                   ],
                                 ),
@@ -124,14 +124,14 @@ class _WebDineInWidgetState extends State<WebDineInWidget> {
                                         overflow: TextOverflow.ellipsis, maxLines: 1,
                                         style: robotoMedium.copyWith(fontWeight: FontWeight.w600),
                                       ),
-                                      SizedBox(height: Dimensions.paddingSizeExtraSmall),
+                                      const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                                       Text(
                                         dineInController.dineInModel!.restaurants![index].address ?? '',
                                         overflow: TextOverflow.ellipsis, maxLines: 1,
                                         style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                                       ),
-                                      SizedBox(height: Dimensions.paddingSizeExtraSmall),
+                                      const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                                       Row(mainAxisAlignment: MainAxisAlignment.start, children: [
 
@@ -163,10 +163,10 @@ class _WebDineInWidgetState extends State<WebDineInWidget> {
               ) : const SizedBox(),
             ],
           )),
-          SizedBox(width: Dimensions.paddingSizeExtraOverLarge),
+          const SizedBox(width: Dimensions.paddingSizeExtraOverLarge),
 
           Text('view_all'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
-          SizedBox(width: Dimensions.paddingSizeSmall),
+          const SizedBox(width: Dimensions.paddingSizeSmall),
 
           ArrowIconButtonWidget(
             onTap: () => Get.toNamed(RouteHelper.getDineInRestaurantScreen()),

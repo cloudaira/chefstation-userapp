@@ -40,7 +40,7 @@ class _CustomImageWidgetState extends State<CustomImageWidget> {
       },
       child: AnimatedScale(
         scale: _isHovered ? 1.2 : 1.0,
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
         child: CachedNetworkImage(
           color: widget.color,

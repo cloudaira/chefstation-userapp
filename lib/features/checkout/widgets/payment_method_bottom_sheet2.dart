@@ -332,8 +332,8 @@ class _PaymentMethodBottomSheet2State extends State<PaymentMethodBottomSheet2> {
             borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
             border: Border.all(color: Theme.of(context).disabledColor.withValues(alpha: 0.2)),
           ),
-          padding: EdgeInsets.all(Dimensions.paddingSizeSmall),
-          margin: EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall),
+          padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+          margin: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: Dimensions.paddingSizeExtraSmall, children: [
 
             Text('${'change_amount'.tr}(${Get.find<SplashController>().configModel?.currencySymbol})', style: robotoBold),
@@ -362,7 +362,7 @@ class _PaymentMethodBottomSheet2State extends State<PaymentMethodBottomSheet2> {
             });
           },
           radius: Dimensions.radiusSmall,
-          padding: EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
+          padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
           child: Text(showChangeAmount ? 'see_less'.tr : 'see_more'.tr , style: robotoBold.copyWith(color: Colors.blue)),
         ),
         const SizedBox(height: Dimensions.paddingSizeSmall),

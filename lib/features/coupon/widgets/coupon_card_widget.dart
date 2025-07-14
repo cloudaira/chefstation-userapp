@@ -94,7 +94,7 @@ class CouponCardWidget extends StatelessWidget {
                   tailLength: 14,
                   tailBaseWidth: 20,
                   triggerMode: TooltipTriggerMode.manual,
-                  content: unavailable ? SizedBox() : Padding(
+                  content: unavailable ? const SizedBox.shrink() : Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text('${'code_copied'.tr} !',style: robotoRegular.copyWith(color: Theme.of(context).cardColor)),
                   ),

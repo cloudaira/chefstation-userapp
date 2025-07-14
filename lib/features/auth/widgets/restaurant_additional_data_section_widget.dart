@@ -88,7 +88,7 @@ class RestaurantAdditionalDataSectionWidget extends StatelessWidget {
                       restaurantRegiController.setAdditionalDate(index, formattedDate);
                     }
                   },
-                  child: Icon(Icons.calendar_month, size: 22),
+                  child: const Icon(Icons.calendar_month, size: 22),
                 ),
               ]),
             ) : showCheckBox ? Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -100,7 +100,7 @@ class RestaurantAdditionalDataSectionWidget extends StatelessWidget {
                 itemCount: restaurantRegiController.dataList![index].checkData!.length,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.zero,
+                padding: const EdgeInsets.all(0),
                 itemBuilder: (context, i) {
                   return Row(children: [
                     Checkbox(

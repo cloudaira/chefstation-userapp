@@ -69,12 +69,12 @@ class _PdfViewWidgetState extends State<PdfViewWidget> {
           if(Get.find<ChatController>().isVideoExtension(url) && thumbnailList.isNotEmpty) {
             return CustomInkWellWidget(
               onTap: ()=> Get.to(PreviewScreen(images: [url], selectedIndex: index)),
-              padding: EdgeInsets.only(bottom: Dimensions.paddingSizeSmall),
+              padding: const EdgeInsets.only(bottom: Dimensions.paddingSizeSmall),
               child: Stack(children: [
                 thumbnailView(index),
 
                 if(!GetPlatform.isWeb)
-                  Positioned.fill(child: Center(child: Icon(Icons.play_circle, color: Colors.white))),
+                  const Positioned.fill(child: Center(child: Icon(Icons.play_circle, color: Colors.white))),
 
               ]),
             );
@@ -125,6 +125,6 @@ class _PdfViewWidgetState extends State<PdfViewWidget> {
         : thumbnailList.isNotEmpty && thumbnailList.length > index && thumbnailList[index] != null ? ClipRRect(
       borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
       child: Image.file(File(thumbnailList[index]!.path)),
-    ) : const SizedBox();
+    ) : const SizedBox.shrink();
   }
 }

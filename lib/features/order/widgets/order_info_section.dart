@@ -84,7 +84,7 @@ class OrderInfoSection extends StatelessWidget {
 
             isDesktop ? Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
 
-              SizedBox(height: Dimensions.paddingSizeSmall),
+              const SizedBox(height: Dimensions.paddingSizeSmall),
               Text('${'order'.tr} # ${order.id.toString()}', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
@@ -184,12 +184,12 @@ class OrderInfoSection extends StatelessWidget {
                     ),
                   )),
 
-                  SizedBox(height: Dimensions.paddingSizeDefault),
+                  const SizedBox(height: Dimensions.paddingSizeDefault),
 
                 ],
               ),
             ),
-            SizedBox(height: Dimensions.paddingSizeDefault),
+            const SizedBox(height: Dimensions.paddingSizeDefault),
 
           ]) : Column(children: [
 
@@ -287,7 +287,7 @@ class OrderInfoSection extends StatelessWidget {
 
               isDineIn ? Row(children: [
                 Text('${'order_date'.tr}:', style: robotoRegular),
-                Spacer(),
+                const Spacer(),
                 const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                 Text(DateConverter.dateTimeStringToDateTime(order.createdAt!), style: robotoMedium),
               ]) : const SizedBox(),
@@ -295,7 +295,7 @@ class OrderInfoSection extends StatelessWidget {
 
               isDineIn ? Row(children: [
                 Text('${'dine_in_date'.tr}:', style: robotoRegular),
-                Spacer(),
+                const Spacer(),
                 const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                 Text(DateConverter.dateTimeStringToDateTime(order.scheduleAt!), style: robotoMedium),
               ]) : const SizedBox(),
@@ -1089,8 +1089,8 @@ class OrderInfoSection extends StatelessWidget {
                   borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
                   color: Theme.of(context).disabledColor.withValues(alpha: 0.2),
                 ),
-                padding: EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
-                margin: EdgeInsets.only(top: Dimensions.paddingSizeSmall),
+                padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
+                margin: const EdgeInsets.only(top: Dimensions.paddingSizeSmall),
                 child: Text(
                     'this_delivery_man_is_restaurant_delivery_man'.tr,
                     style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),

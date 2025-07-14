@@ -153,7 +153,6 @@ class SecurityUtils {
   /// Validate password strength
   static PasswordStrength validatePasswordStrength(String password) {
     int score = 0;
-    String feedback = '';
 
     if (password.length >= 8) score++;
     if (password.contains(RegExp(r'[a-z]'))) score++;

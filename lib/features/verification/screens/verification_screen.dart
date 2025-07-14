@@ -111,9 +111,9 @@ class VerificationScreenState extends State<VerificationScreen> {
                 child: Text(
                   'otp_verification'.tr, style: robotoRegular,
                 ),
-              ) : const SizedBox(),
+              ) : const SizedBox.shrink(),
 
-              CustomAssetImageWidget(Images.otpVerification, height: 100),
+              const CustomAssetImageWidget(Images.otpVerification, height: 100),
               const SizedBox(height: Dimensions.paddingSizeOverLarge),
 
               Get.find<SplashController>().configModel!.demo! ? Text(

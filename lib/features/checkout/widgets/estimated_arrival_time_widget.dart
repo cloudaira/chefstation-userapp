@@ -73,14 +73,14 @@ class EstimatedArrivalTimeWidget extends StatelessWidget {
               top: -15, left: 10,
               child: checkoutController.selectedDineInDate != null ? Container(
                 color: Theme.of(context).cardColor,
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 child: Text('select_date'.tr, style: robotoRegular),
-              ) : const SizedBox(),
+              ) : const SizedBox.shrink(),
             )
 
           ]),
         ),
-        SizedBox(height: Dimensions.paddingSizeLarge),
+        const SizedBox(height: 8),
 
         InkWell(
           onTap: () async {
@@ -140,9 +140,9 @@ class EstimatedArrivalTimeWidget extends StatelessWidget {
               top: -15, left: 10,
               child: checkoutController.estimateDineInTime != null ? Container(
                 color: Theme.of(context).cardColor,
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 child: Text('select_time'.tr, style: robotoRegular),
-              ) : const SizedBox(),
+              ) : const SizedBox.shrink(),
             ),
 
           ]),

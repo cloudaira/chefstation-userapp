@@ -50,13 +50,13 @@ class _DineRestaurantFilterBottomSheetState extends State<DineRestaurantFilterBo
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
 
-                SizedBox(),
+                const SizedBox.shrink(),
 
                 Text('filter'.tr, style: robotoBold),
 
                 IconButton(
                   onPressed: () => Get.back(),
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                 ),
               ],
             ) : Container(
@@ -101,7 +101,7 @@ class _DineRestaurantFilterBottomSheetState extends State<DineRestaurantFilterBo
 
 
                     const Divider(height: 20),
-                    SizedBox(height: Dimensions.paddingSizeSmall),
+                    const SizedBox(height: Dimensions.paddingSizeSmall),
 
                     Text('filter_by'.tr, style: robotoBold),
                     const SizedBox(height: Dimensions.paddingSizeDefault),
@@ -136,7 +136,7 @@ class _DineRestaurantFilterBottomSheetState extends State<DineRestaurantFilterBo
                     ),
                     const Divider(height: 20),
 
-                    SizedBox(height: Dimensions.paddingSizeSmall),
+                    const SizedBox(height: Dimensions.paddingSizeSmall),
 
                     GetBuilder<CuisineController>(
                       builder: (cuisineController) {
@@ -147,7 +147,7 @@ class _DineRestaurantFilterBottomSheetState extends State<DineRestaurantFilterBo
                             const SizedBox(height: Dimensions.paddingSizeDefault),
                         
                             ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
+                              physics: const NeverScrollableScrollPhysics(),
                               itemCount: showAllCuisine ? cuisineController.cuisineModel!.cuisines!.length
                                   : cuisineController.cuisineModel!.cuisines!.length > 4 ? 4 : cuisineController.cuisineModel!.cuisines!.length,
                               shrinkWrap: true,
@@ -190,11 +190,11 @@ class _DineRestaurantFilterBottomSheetState extends State<DineRestaurantFilterBo
             ),
 
             Container(
-              padding: EdgeInsets.all(Dimensions.paddingSizeDefault),
+              padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
               decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
-                borderRadius: ResponsiveHelper.isDesktop(context) ? BorderRadius.only(bottomRight: Radius.circular(Dimensions.radiusSmall), bottomLeft: Radius.circular(Dimensions.radiusSmall)) : BorderRadius.circular(0),
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
+                borderRadius: ResponsiveHelper.isDesktop(context) ? const BorderRadius.only(bottomRight: Radius.circular(Dimensions.radiusSmall), bottomLeft: Radius.circular(Dimensions.radiusSmall)) : BorderRadius.circular(0),
+                boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
               ),
               child: Row(children: [
 

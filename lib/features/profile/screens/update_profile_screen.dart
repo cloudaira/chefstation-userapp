@@ -162,15 +162,15 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                                     child: !profileController.userInfoModel!.isPhoneVerified! && Get.find<SplashController>().configModel!.centralizeLoginSetup!.phoneVerificationStatus! ? InkWell(
                                       onTap: () async {
                                         if(!profileController.userInfoModel!.isPhoneVerified! && Get.find<SplashController>().configModel!.centralizeLoginSetup!.phoneVerificationStatus!) {
-                                          Get.dialog(CustomLoaderWidget());
+                                          Get.dialog(const CustomLoaderWidget());
                                           await _updateProfile(profileController: profileController, fromButton: false, fromPhone: true);
                                         }
                                       },
                                       child: Image.asset(Images.unVerifiedIcon, height: 20, width: 20, fit: BoxFit.cover),
-                                    ) : const SizedBox(),
+                                    ) : const SizedBox.shrink(),
                                   )
                                 ],
-                              ) : Center(child: CircularProgressIndicator()),
+                              ) : const Center(child: CircularProgressIndicator()),
                               const SizedBox(height: Dimensions.paddingSizeExtraOverLarge),
 
                               CustomTextFieldWidget(
@@ -188,7 +188,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                                     ? Images.unVerifiedIcon : null,
                                 suffixOnPressed: () async {
                                   if(!profileController.userInfoModel!.isEmailVerified! || profileController.userInfoModel!.email != _emailController.text) {
-                                    Get.dialog(CustomLoaderWidget());
+                                    Get.dialog(const CustomLoaderWidget());
                                     await _updateProfile(profileController: profileController, fromButton: false, fromPhone: false);
                                   }
                                 },
@@ -354,7 +354,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                               validator: (value) => ValidateCheck.validateEmptyText(value, "first_name_field_is_required".tr),
                             ),
                           ),
-                          // const SizedBox(width: Dimensions.paddingSizeLarge),
+                          const SizedBox(width: Dimensions.paddingSizeSmall),
                           //
                           // Expanded(
                           //   child: CustomTextFieldWidget(
@@ -397,7 +397,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                               },
                             ),
                           ),
-                          const SizedBox(width: Dimensions.paddingSizeLarge),
+                          const SizedBox(width: Dimensions.paddingSizeSmall),
 
                           Expanded(
                             child: Stack(
@@ -415,7 +415,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                                   onCountryChanged: (CountryCode countryCode) => _countryDialCode = countryCode.dialCode,
                                   countryDialCode: _countryDialCode ?? Get.find<LocalizationController>().locale.countryCode,
                                   suffixImage: profileController.userInfoModel!.isPhoneVerified! ? Images.verifiedIcon : null,
-                                ) : Center(child: CircularProgressIndicator()),
+                                ) : const Center(child: CircularProgressIndicator()),
 
                                 Positioned(
                                   right: 10, top: 10,

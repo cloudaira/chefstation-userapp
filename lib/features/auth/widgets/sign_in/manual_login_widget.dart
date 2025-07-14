@@ -323,7 +323,7 @@ class ManualLoginWidget extends StatelessWidget {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.radiusSmall)),
                           backgroundColor: Theme.of(context).cardColor,
                           insetPadding: EdgeInsets.zero,
-                          child: SignUpWidget(),
+                          child: const SignUpWidget(),
                         ),
                       ),
                     );
@@ -415,7 +415,7 @@ class ManualLoginWidget extends StatelessWidget {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.radiusLarge)),
                       backgroundColor: Theme.of(context).cardColor,
                       insetPadding: EdgeInsets.zero,
-                      child: SignUpWidget(),
+                      child: const SignUpWidget(),
                     ),
                   ),
                 );
