@@ -2,8 +2,13 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
-    id "com.google.gms.google-services"
-    id "com.google.firebase.crashlytics"
+}
+
+// Conditionally apply Firebase plugins only if google-services.json exists
+def googleServicesFile = file("google-services.json")
+if (googleServicesFile.exists()) {
+    apply plugin: "com.google.gms.google-services"
+    apply plugin: "com.google.firebase.crashlytics"
 }
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -79,6 +84,12 @@ flutter {
 
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
-    implementation "com.google.firebase:firebase-messaging:23.4.1"
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+}
+
+// Conditionally add Firebase dependencies only if google-services.json exists
+if (googleServicesFile.exists()) {
+    dependencies {
+        implementation "com.google.firebase:firebase-messaging:23.4.1"
+    }
 }
