@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class AppConstants {
   static const String appName = 'Chef Station';
-  static const double appVersion = 8.2;
+  static const double appVersion = 8.3;
 
   static const String fontFamily = 'Cairo';
   static const bool payInWevView = false;

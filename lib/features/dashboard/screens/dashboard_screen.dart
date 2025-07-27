@@ -25,6 +25,7 @@ import 'package:chefstation_multivendor/common/widgets/custom_dialog_widget.dart
 import 'package:expandable_bottom_sheet/expandable_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/cupertino.dart';
 
 class DashboardScreen extends StatefulWidget {
   final int pageIndex;
@@ -181,20 +182,20 @@ class DashboardScreenState extends State<DashboardScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
                 child: Row(children: [
-                  BottomNavItem(iconData: Icons.home, isSelected: _pageIndex == 0, onTap: () => _setPage(0)),
-                  BottomNavItem(iconData: Icons.favorite, isSelected: _pageIndex == 1, onTap: () => _setPage(1)),
+                  BottomNavItem(iconData: CupertinoIcons.home, isSelected: _pageIndex == 0, onTap: () => _setPage(0)),
+                  BottomNavItem(iconData: CupertinoIcons.heart, isSelected: _pageIndex == 1, onTap: () => _setPage(1)),
                   const Expanded(child: SizedBox()),
-                  BottomNavItem(iconData: Icons.shopping_bag, isSelected: _pageIndex == 3, onTap: () => _setPage(3)),
-                  BottomNavItem(iconData: Icons.menu, isSelected: _pageIndex == 4, onTap: () => _setPage(4)),
+                  BottomNavItem(iconData: CupertinoIcons.bag, isSelected: _pageIndex == 3, onTap: () => _setPage(3)),
+                  BottomNavItem(iconData: CupertinoIcons.line_horizontal_3, isSelected: _pageIndex == 4, onTap: () => _setPage(4)),
                 ]),
               ),
             );
           }
         ),
+
         body: GetBuilder<OrderController>(
           builder: (orderController) {
             List<OrderModel> runningOrder = orderController.runningOrderList != null ? orderController.runningOrderList! : [];
-
             List<OrderModel> reversOrder =  List.from(runningOrder.reversed);
             return ExpandableBottomSheet(
               background: PageView.builder(
@@ -206,7 +207,6 @@ class DashboardScreenState extends State<DashboardScreen> {
                 },
               ),
               persistentContentHeight: 100,
-
               onIsContractedCallback: () {
                 if(!orderController.showOneOrder) {
                   orderController.showOrders();
@@ -217,9 +217,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                   orderController.showOrders();
                 }
               },
-
               enableToggle: true,
-
               expandableContent: (ResponsiveHelper.isDesktop(context) || !_isLogin || orderController.runningOrderList == null
                   || orderController.runningOrderList!.isEmpty || !orderController.showBottomSheet) ? const SizedBox()
                   : Dismissible(
@@ -236,7 +234,6 @@ class DashboardScreenState extends State<DashboardScreen> {
                       _setPage(3);
                     }),
               ),
-
             );
           }
         ),
@@ -249,5 +246,70 @@ class DashboardScreenState extends State<DashboardScreen> {
       _pageController!.jumpToPage(pageIndex);
       _pageIndex = pageIndex;
     });
+  }
+
+  Widget _buildCustomBottomNavBar(BuildContext context) {
+    return SizedBox(
+      height: 80,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          // Bar background
+          Container(
+            height: 65,
+            margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(24),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 10,
+                  offset: Offset(0, -2),
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                BottomNavItem(iconData: CupertinoIcons.home, isSelected: _pageIndex == 0, onTap: () => _setPage(0)),
+                BottomNavItem(iconData: CupertinoIcons.heart, isSelected: _pageIndex == 1, onTap: () => _setPage(1)),
+                const SizedBox(width: 60), // Space for floating button
+                BottomNavItem(iconData: CupertinoIcons.bag, isSelected: _pageIndex == 3, onTap: () => _setPage(3)),
+                BottomNavItem(iconData: CupertinoIcons.line_horizontal_3, isSelected: _pageIndex == 4, onTap: () => _setPage(4)),
+              ],
+            ),
+          ),
+          // Floating cart button
+          Positioned(
+            bottom: 20,
+            child: GestureDetector(
+              onTap: () => _setPage(2),
+              child: Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  color: _pageIndex == 2 ? Theme.of(context).primaryColor : Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 10,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: CartWidget(
+                    color: _pageIndex == 2 ? Colors.white : Colors.grey,
+                    size: 32,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

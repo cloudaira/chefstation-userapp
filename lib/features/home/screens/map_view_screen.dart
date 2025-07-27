@@ -363,8 +363,8 @@ class _MapViewScreenState extends State<MapViewScreen> {
 
   void _setMarkers(List<Restaurant> restaurants, bool selected, {AddressModel? address}) async {
     try{
-      Uint8List restaurantMarkerIcon = await _convertAssetToUnit8List(Images.nearbyRestaurantMarker, width: 120);
-      final Uint8List myLocationMarkerIcon = await _convertAssetToUnit8List(Images.myLocationMarker, width: 130);
+      Uint8List restaurantMarkerIcon = await _convertAssetToUnit8List(Images.nearbyRestaurantMarker, width: 48);
+      final Uint8List myLocationMarkerIcon = await _convertAssetToUnit8List(Images.myLocationMarker, width: 48);
 
       _markers = {};
       List<LatLng> latLngs = [];

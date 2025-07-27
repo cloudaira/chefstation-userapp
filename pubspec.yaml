@@ -58,7 +58,7 @@ dependencies:
   geolocator: ^13.0.1
   google_maps_flutter: ^2.9.0
   google_maps_flutter_web: ^0.5.10
-  location: ^6.0.0
+  location: ^7.0.0
   custom_map_markers: ^0.0.2+1
   custom_info_window: ^1.0.1
   
@@ -79,7 +79,7 @@ dependencies:
   # Media & Images
   image_picker: ^1.1.2
   cached_network_image: ^3.4.1
-  get_thumbnail_video: ^0.7.0
+  get_thumbnail_video: ^0.7.3
   
   # Video
   video_player: ^2.9.3
@@ -104,7 +104,7 @@ dependencies:
   drift_flutter: ^0.2.1
   
   # HTML & Web Content
-  flutter_widget_from_html_core: ^0.15.0
+  flutter_widget_from_html_core: ^0.15.2
   meta_seo: ^3.0.9
   
   # Professional Development Dependencies
@@ -132,7 +132,7 @@ dev_dependencies:
     sdk: flutter
 
   # Code Quality
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   
   # Database Development
   drift_dev: ^2.21.2
@@ -162,6 +162,8 @@ flutter:
     - assets/image/
     - assets/language/
     - assets/map/
+    - assets/image/app_background_launcher.png
+    - assets/image/ic_launcher.gif
 
   fonts:
     - family: Cairo

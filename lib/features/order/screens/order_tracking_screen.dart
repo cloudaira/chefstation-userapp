@@ -203,13 +203,13 @@ class OrderTrackingScreenState extends State<OrderTrackingScreen> with WidgetsBi
   void setMarker(Restaurant? restaurant, DeliveryMan? deliveryMan, AddressModel? addressModel, bool takeAway, {AddressModel? currentAddress, bool fromCurrentLocation = false}) async {
     try {
       BitmapDescriptor restaurantImageData = await MarkerHelper.convertAssetToBitmapDescriptor(
-        width: 120, imagePath: Images.restaurantMarker,
+        width: 48, imagePath: Images.restaurantMarker,
       );
       BitmapDescriptor deliveryBoyImageData = await MarkerHelper.convertAssetToBitmapDescriptor(
-        width: 120, imagePath: Images.deliveryManMarker,
+        width: 48, imagePath: Images.deliveryManMarker,
       );
       BitmapDescriptor destinationImageData = await MarkerHelper.convertAssetToBitmapDescriptor(
-        width: 120, imagePath: Images.myLocationMarker,
+        width: 48, imagePath: Images.myLocationMarker,
       );
 
       // Animate to coordinate
