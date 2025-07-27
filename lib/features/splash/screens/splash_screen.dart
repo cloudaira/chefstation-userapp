@@ -7,8 +7,7 @@ import 'package:chefstation_multivendor/features/notification/domain/models/noti
 import 'package:chefstation_multivendor/features/splash/controllers/splash_controller.dart';
 import 'package:chefstation_multivendor/features/splash/domain/models/deep_link_body.dart';
 import 'package:chefstation_multivendor/helper/address_helper.dart';
-import 'package:chefstation_multivendor/util/dimensions.dart';
-import 'package:chefstation_multivendor/util/images.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
